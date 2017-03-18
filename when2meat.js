@@ -2,15 +2,39 @@ let jq = document.createElement('script');
 jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js";
 document.getElementsByTagName('head')[0].appendChild(jq);
 
-const baconPattern = "https://s3.amazonaws.com/spoonflower/public/design_thumbnails/0196/0562/rrbacon_1_shop_thumb.png"
-const meatyGif = "https://3.bp.blogspot.com/-0aphAH5D7DA/V5-0Y9b14oI/AAAAAAAABTI/sUU1fwneTtI8GmI0H8aT00AIe-dzJrGmACLcB/s1600/Web-Article-Chef-Marcus-Samuelsson-Streetbird-Red-Rooster-Harlem-Tips-on-Roasting-Brining-a-Perfect-Chicken-Rotisserie-Recipe1.gif"
+const baconPattern = "https://rawgit.com/pennlabs/gcal2when2meat/master/img/bacon.png"
+const meatyGif = "https://rawgit.com/pennlabs/gcal2when2meat/master/img/meaty.gif"
+
+function hexToRgb(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+}
+
+function getIntensityFromStyle(styleText) {
+  if (styleText.includes("background: rgb(")) {
+    substring = styleText.substring(styleText.indexOf("rgb(") + 4);
+    substring = substring.substring(0, substring.indexOf(")"))
+    rgb = substring.split(",")
+    return rgb[1];
+  } else if (styleText.includes("background: #")) {
+      substring = styleText.substring(styleText.indexOf("background: #") + 13)
+      substring = substring.substring(0, substring.indexOf(";"))
+      return hexToRgb(substring).g;
+  } else {
+    return 255;
+  }
+}
 
 const when2Meat = function(){
   $("#MainBody").css("background", "linear-gradient(rgba(255, 255, 255, 0.85),rgba(255, 255, 255, 0.85)),url('" + meatyGif  + "')")
   
   
   $("[bgcolor]").css("background", "rgb(255,255,255)")
-  $("[bgcolor='#339900']").css("background", "url('" + baconPattern + "')")
+  $("[bgcolor='#339900']").css("background", "linear-gradient(rgba(255, 255, 255, " + 0.5 + "), rgba(255, 255, 255, " + 0.5  + ")) ,url('" + baconPattern + "')")
 
   setInterval(function(){
     $("#GroupGrid > div:last-child").css("background", "url('" + baconPattern + "')")
