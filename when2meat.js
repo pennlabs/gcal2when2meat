@@ -54,7 +54,7 @@ setTimeout(
             function(){
               $("#YouGrid > div:last-child").css("background", "url('" + baconPattern  + "')")
                 $("#YouGrid > div:last-child > div[id!='GroupSlots']").css("background", "rgb(255,255,255)")
-              $("[id*='YouTime']").not("[style*='background: #ffdede']").not("[style*='background: rgb(51, 153, 0)']").css("background", "rgba(0,0,0,0)")
+              $("[id*='YouTime'][style*='background: #ffdede'][style*='background: rgb(51, 153, 0)']").css("background", "rgba(0,0,0,0)")
             }, 50);
       });
     }, 500);
