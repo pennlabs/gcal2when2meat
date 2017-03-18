@@ -6,7 +6,7 @@ const baconPattern = "https://rawgit.com/pennlabs/gcal2when2meat/master/img/baco
 const meatyGif = "https://rawgit.com/pennlabs/gcal2when2meat/master/img/meaty.gif"
 
 function hexToRgb(hex) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result ? {
     r: parseInt(result[1], 16),
     g: parseInt(result[2], 16),
@@ -16,13 +16,13 @@ function hexToRgb(hex) {
 
 function getIntensityFromStyle(styleText) {
   if (styleText.includes("background: rgb(")) {
-    substring = styleText.substring(styleText.indexOf("background: rgb(") + 4);
+    let substring = styleText.substring(styleText.indexOf("background: rgb(") + 4);
     substring = substring.substring(0, substring.indexOf(")"))
-    rgb = substring.split(",")
+    let rgb = substring.split(",")
     return rgb[1];
   } else if (styleText.includes("background: #")) {
-      substring = styleText.substring(styleText.indexOf("background: #") + 13)
-      substring = substring.substring(0, substring.indexOf(";"))
+      let substring = styleText.substring(styleText.indexOf("background: #") + 13)
+       substring = substring.substring(0, substring.indexOf(";"))
       return hexToRgb(substring).g;
   } else {
     return 255;
