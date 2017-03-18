@@ -34,13 +34,13 @@ const when2Meat = function(){
   
   
   $("[bgcolor]").css("background", "rgb(255,255,255)")
-  $("[bgcolor='#339900']").css("background", "linear-gradient(rgba(255, 255, 255, " + 0.5 + "), rgba(255, 255, 255, " + 0.5  + ")) ,url('" + baconPattern + "')")
+  $("[bgcolor='#339900']").css("background", "url('" + baconPattern + "')")
 
   setInterval(function(){
     $("#GroupGrid > div:last-child").css("background", "url('" + baconPattern + "')")
     $("#GroupGrid > div:last-child > div[id!='GroupSlots']").css("background", "rgb(255,255,255)")
 
-    $("[id*='GroupTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']").css("background", "rgba(0,0,0,0)")
+    $("[id*='GroupTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']").css("background", "rgba(255,255,255,"+ (getIntensityFromStyle(this.css())/255).toFixed(2)  +")")
   
     $("#YouGrid > div:last-child").css("background", "url('" + baconPattern  + "')")
     $("#YouGrid > div:last-child > div[id!='GroupSlots']").css("background", "rgb(255,255,255)")
