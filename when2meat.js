@@ -40,7 +40,7 @@ const when2Meat = function() {
 
     list = $("[id*='GroupTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']")
     list.each(function(index, elem) {
-      let i = (((getIntensityFromStyle($(elem).attr("style"))-187)*0.01470588235).toFixed(2); 
+      let i = ((getIntensityFromStyle($(elem).attr("style"))-187)*0.01470588235).toFixed(2); 
       $(elem).css({"background": "rgba(255,255,255,"+ i +")"})
     });
   
