@@ -1,4 +1,4 @@
-var jq = document.createElement('script');
+let jq = document.createElement('script');
 jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js";
 document.getElementsByTagName('head')[0].appendChild(jq);
 
@@ -8,9 +8,11 @@ setInterval(function(){
   $("#GroupGrid > div:last-child").css("background", "url('" + baconPattern + "')")
   $("#GroupGrid > div:last-child > div[id!='GroupSlots']").css("background", "rgb(255,255,255)")
   $("[id*='GroupTime'][style*='51, 153, 0']").css("background", "rgba(0,0,0,0)")
+  $("[id*='GroupTime'][style*='339900']").css("background", "rgba(0,0,0,0)")
   $("#YouGrid > div:last-child").css("background", "url('" + baconPattern  + "')")
   $("#YouGrid > div:last-child > div[id!='GroupSlots']").css("background", "rgb(255,255,255)")
   $("[id*='YouTime'][style*='51, 153, 0']").css("background", "rgba(0,0,0,0)")
+  $("[id*='YouTime'][style*='339900']").css("background", "rgba(0,0,0,0)")
   $("[id*='YouTime'][style*='255, 222, 222']").css("background", "rgb(150,150,150)")
 }, 10);
 
