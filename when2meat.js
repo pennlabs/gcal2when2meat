@@ -36,7 +36,7 @@ const when2Meat = function() {
   $("#GroupGrid > div:last-child").css("background", "url('" + baconPattern + "')")
   let slider = $("#GroupKey > table > tbody > tr > [bgcolor]")
   slider.each(function(index, elem) {
-    whiteness = (index/(slider.length-1)).toFixed(2)
+    whiteness = (1 - index/(slider.length-1)).toFixed(2)
     $(elem).css("background", "linear-gradient(rgba(255,255,255,"+ whiteness  +"), rgba(255,255,255,"+ whiteness  +")), url('" + baconPattern + "')")
   })
   $("#GroupGrid > div:last-child > div[id!='GroupSlots']").css("background", "rgb(255,255,255)")
