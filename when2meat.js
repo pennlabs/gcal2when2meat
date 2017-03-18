@@ -30,7 +30,6 @@ function getIntensityFromStyle(styleText) {
 }
 
 const when2Meat = function() {
-
   $("#MainBody").css("background", "linear-gradient(rgba(255, 255, 255, 0.85),rgba(255, 255, 255, 0.85)),url('" + meatyGif  + "')")
     $("[bgcolor]").css("background", "rgb(255,255,255)")
     $("[bgcolor='#339900']").css("background", "url('" + baconPattern + "')")
@@ -55,13 +54,7 @@ setTimeout(
             function(){
               $("#YouGrid > div:last-child").css("background", "url('" + baconPattern  + "')")
                 $("#YouGrid > div:last-child > div[id!='GroupSlots']").css("background", "rgb(255,255,255)")
-                list = $("[id*='YouTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']")
-                list.each(function(index, elem) {
-                  let g = getIntensityFromStyle($(elem).attr("style"));
-                  let i = ((g-187)*0.01470588235).toFixed(2); 
-                  $(elem).css({"background": "rgba("+g+","+g+","+g+","+i+")"})
-                });
-              $("[id*='YouTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']").css("background", "rgba(0,0,0,0)")
+              $("[id*='YouTime']").not("[style*='background: #ffdede']").not("[style*='background: rgb(51, 153, 0)']").css("background", "rgba(0,0,0,0)")
             }, 50);
       });
     }, 500);
