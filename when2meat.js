@@ -21,7 +21,7 @@ const when2Meat = function(){
     $("#YouGrid > div:last-child > div[id!='GroupSlots']").css("background", "rgb(255,255,255)")
   
     $("[id*='YouTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']").css("background", "rgba(0,0,0,0)")
-  }
-},10);
+  }, 10);
+}
 
 setTimeout(when2Meat, 500);
