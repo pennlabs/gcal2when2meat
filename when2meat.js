@@ -15,13 +15,13 @@ function hexToRgb(hex) {
 }
 
 function getIntensityFromStyle(styleText) {
-  if (styleText.includes("background: rgb(")) {
+  if (styleText.includes("rgb(")) {
     substring = styleText.substring(styleText.indexOf("rgb(") + 4);
     substring = substring.substring(0, substring.indexOf(")"))
     rgb = substring.split(",")
     return rgb[1];
-  } else if (styleText.includes("background: #")) {
-      substring = styleText.substring(styleText.indexOf("background: #") + 13)
+  } else if (styleText.includes("#")) {
+      substring = styleText.substring(styleText.indexOf("#") + 13)
       substring = substring.substring(0, substring.indexOf(";"))
       return hexToRgb(substring).g;
   } else {
@@ -40,7 +40,7 @@ const when2Meat = function(){
     $("#GroupGrid > div:last-child").css("background", "url('" + baconPattern + "')")
     $("#GroupGrid > div:last-child > div[id!='GroupSlots']").css("background", "rgb(255,255,255)")
 
-    $("[id*='GroupTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']").css("background", "rgba(255,255,255,"+ (getIntensityFromStyle(this.css())/255).toFixed(2)  +")")
+    $("[id*='GroupTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']").css("background", "rgba(255,255,255,"+ (getIntensityFromStyle(this.css("background"))/255).toFixed(2)  +")")
   
     $("#YouGrid > div:last-child").css("background", "url('" + baconPattern  + "')")
     $("#YouGrid > div:last-child > div[id!='GroupSlots']").css("background", "rgb(255,255,255)")
