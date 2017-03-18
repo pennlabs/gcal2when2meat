@@ -15,13 +15,13 @@ function hexToRgb(hex) {
 }
 
 function getIntensityFromStyle(styleText) {
-  if (styleText.includes("rgb(")) {
-    substring = styleText.substring(styleText.indexOf("rgb(") + 4);
+  if (styleText.includes("background: rgb(")) {
+    substring = styleText.substring(styleText.indexOf("background: rgb(") + 4);
     substring = substring.substring(0, substring.indexOf(")"))
     rgb = substring.split(",")
     return rgb[1];
-  } else if (styleText.includes("#")) {
-      substring = styleText.substring(styleText.indexOf("#") + 13)
+  } else if (styleText.includes("background: #")) {
+      substring = styleText.substring(styleText.indexOf("background: #") + 13)
       substring = substring.substring(0, substring.indexOf(";"))
       return hexToRgb(substring).g;
   } else {
@@ -41,7 +41,7 @@ const when2Meat = function() {
 
     list = $("[id*='GroupTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']")
     list.each(function(index, elem) {
-      $(elem).css({"background": "rgba(255,255,255,"+ (getIntensityFromStyle(this.css("background"))/255).toFixed(2)  +")"})
+      $(elem).css({"background": "rgba(255,255,255,"+ (getIntensityFromStyle(elem.cssText)/255).toFixed(2)  +")"})
     });
   
     $("#YouGrid > div:last-child").css("background", "url('" + baconPattern  + "')")
