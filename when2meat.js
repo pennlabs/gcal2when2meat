@@ -35,14 +35,12 @@ const when2Meat = function() {
   $("[bgcolor]").css("background", "rgb(255,255,255)")
   $("[bgcolor='#339900']").css("background", "url('" + baconPattern + "')")
 
-  setInterval(function() {
-    $("#GroupGrid > div:last-child").css("background", "url('" + baconPattern + "')")
+  $("#GroupGrid > div:last-child").css("background", "url('" + baconPattern + "')")
     $("#GroupGrid > div:last-child > div[id!='GroupSlots']").css("background", "rgb(255,255,255)")
 
     list = $("[id*='GroupTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']")
     list.each(function(index, elem) {
-      let i = ((getIntensityFromStyle($(elem).attr("style"))/255).toFixed(2) - 0.87) * 5; 
-      console.log(i);
+      let i = (((getIntensityFromStyle($(elem).attr("style"))-187)*0.01470588235).toFixed(2); 
       $(elem).css({"background": "rgba(255,255,255,"+ i +")"})
     });
   
@@ -50,7 +48,9 @@ const when2Meat = function() {
     $("#YouGrid > div:last-child > div[id!='GroupSlots']").css("background", "rgb(255,255,255)")
   
     $("[id*='YouTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']").css("background", "rgba(0,0,0,0)")
-  }, 10);
 }
 
 setTimeout(when2Meat, 500);
+$("document").click(function() {
+  when2Meat();
+});
