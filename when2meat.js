@@ -13,6 +13,8 @@ setInterval(function(){
   $("#YouGrid > div:last-child > div[id!='GroupSlots']").css("background", "rgb(255,255,255)")
   $("[id*='YouTime'][style*='51, 153, 0']").css("background", "rgba(0,0,0,0)")
   $("[id*='YouTime'][style*='339900']").css("background", "rgba(0,0,0,0)")
-  $("[id*='YouTime'][style*='255, 222, 222']").css("background", "rgb(150,150,150)")
+  $("[id*='YouTime'][style*='255, 222, 222']").css("background", "rgb(255,255,255)")
+  $("td[bgcolor']").css("background", "rgb(255,255,255)")
+  $("td[bgcolor='#339900']").css("background", "url('" + baconPattern + "')")
 }, 10);
 
