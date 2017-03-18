@@ -29,19 +29,19 @@ function getIntensityFromStyle(styleText) {
   }
 }
 
-const when2Meat = function(){
+const when2Meat = function() {
   
   $("#MainBody").css("background", "linear-gradient(rgba(255, 255, 255, 0.85),rgba(255, 255, 255, 0.85)),url('" + meatyGif  + "')")
   $("[bgcolor]").css("background", "rgb(255,255,255)")
   $("[bgcolor='#339900']").css("background", "url('" + baconPattern + "')")
 
-  setInterval(function(){
+  setInterval(function() {
     $("#GroupGrid > div:last-child").css("background", "url('" + baconPattern + "')")
     $("#GroupGrid > div:last-child > div[id!='GroupSlots']").css("background", "rgb(255,255,255)")
 
     list = $("[id*='GroupTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']")
-    list.each(function(){
-      $(this).css("background", "rgba(255,255,255,"+ (getIntensityFromStyle(this.css("background"))/255).toFixed(2)  +")")
+    list.each(function(index, elem) {
+      $(elem).css("background", "rgba(255,255,255,"+ (getIntensityFromStyle(this.css("background"))/255).toFixed(2)  +")")
     });
   
     $("#YouGrid > div:last-child").css("background", "url('" + baconPattern  + "')")
