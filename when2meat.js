@@ -15,7 +15,6 @@ function hexToRgb(hex) {
 }
 
 function getIntensityFromStyle(styleText) {
-  console.log(styleText);
   if (styleText.includes("background: rgb(")) {
     substring = styleText.substring(styleText.indexOf("background: rgb(") + 4);
     substring = substring.substring(0, substring.indexOf(")"))
@@ -42,7 +41,7 @@ const when2Meat = function() {
 
     list = $("[id*='GroupTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']")
     list.each(function(index, elem) {
-      $(elem).css({"background": "rgba(255,255,255,"+ (getIntensityFromStyle(elem.cssText)/255).toFixed(2)  +")"})
+      $(elem).css({"background": "rgba(255,255,255,"+ (getIntensityFromStyle(elem.attr("style"))/255).toFixed(2)  +")"})
     });
   
     $("#YouGrid > div:last-child").css("background", "url('" + baconPattern  + "')")
