@@ -30,7 +30,7 @@ function getIntensityFromStyle(styleText) {
 }
 
 const when2Meat = function(){
-  $("#MainBody").css("background", "linear-gradient(rgba(255, 255, 255, 0.85),rgba(255, 255, 255, 0.85)),url('" + meatyGif  + "')")
+  $("#MainBody").css("background", "url('" + meatyGif  + "')")
   
   
   $("[bgcolor]").css("background", "rgb(255,255,255)")
