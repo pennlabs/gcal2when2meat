@@ -31,21 +31,21 @@ function getIntensityFromStyle(styleText) {
 
 const when2Meat = function() {
   $("#MainBody").css("background", "linear-gradient(rgba(255, 255, 255, 0.85),rgba(255, 255, 255, 0.85)),url('" + meatyGif  + "')")
+  $("[bgcolor='#339900']").css("background", "url('" + baconPattern + "')")
+  $("#GroupGrid > div:last-child").css("background", "url('" + baconPattern + "')")
+  let slider = $("#GroupKey > table > tbody > tr > [bgcolor]")
+  slider.each(function(index, elem) {
+    whiteness = (index/(slider.length-1)).toFixed(2)
+    $(elem).css("background", "linear-gradient(rgba(255,255,255,"+ whiteness  +"), rgba(255,255,255,"+ whiteness  +")), url('" + baconPattern + "')")
+  })
+  $("#GroupGrid > div:last-child > div[id!='GroupSlots']").css("background", "rgb(255,255,255)")
 
-    $("#GroupGrid > div:last-child").css("background", "url('" + baconPattern + "')")
-    let slider = $("[bgcolor]")
-    slider.each(function(index, elem) {
-      whiteness = (index/(slider.length-1)).toFixed(2)
-      $(elem).css("background", "linear-gradient(rgba(255,255,255,"+ whiteness  +"), rgba(255,255,255,"+ whiteness  +")), url('" + baconPattern + "')")
-    })
-    $("#GroupGrid > div:last-child > div[id!='GroupSlots']").css("background", "rgb(255,255,255)")
-
-    list = $("[id*='GroupTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']")
-    list.each(function(index, elem) {
-      let g = getIntensityFromStyle($(elem).attr("style"));
-      let i = ((g-187)*0.01470588235).toFixed(2); 
-      $(elem).css({"background": "rgba("+g+","+g+","+g+","+i+")"})
-    });
+  list = $("[id*='GroupTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']")
+  list.each(function(index, elem) {
+    let g = getIntensityFromStyle($(elem).attr("style"));
+    let i = ((g-187)*0.01470588235).toFixed(2); 
+    $(elem).css({"background": "rgba("+g+","+g+","+g+","+i+")"})
+  });
 }
 
 setTimeout(when2Meat, 500);
