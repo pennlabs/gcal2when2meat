@@ -15,6 +15,7 @@ function hexToRgb(hex) {
 }
 
 function getIntensityFromStyle(styleText) {
+  console.log(styleText);
   if (styleText.includes("background: rgb(")) {
     substring = styleText.substring(styleText.indexOf("background: rgb(") + 4);
     substring = substring.substring(0, substring.indexOf(")"))
