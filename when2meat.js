@@ -41,7 +41,9 @@ const when2Meat = function() {
 
     list = $("[id*='GroupTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']")
     list.each(function(index, elem) {
-      $(elem).css({"background": "rgba(255,255,255,"+ (getIntensityFromStyle($(elem).attr("style"))/255).toFixed(2)  +")"})
+      let i = getIntensityFromStyle($(elem).attr("style"))/255).toFixed(2); 
+      console.log(i);
+      $(elem).css({"background": "rgba(255,255,255,"+ i +")"})
     });
   
     $("#YouGrid > div:last-child").css("background", "url('" + baconPattern  + "')")
