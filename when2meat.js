@@ -31,6 +31,7 @@ function getIntensityFromStyle(styleText) {
 
 const when2Meat = function() {
   $("#MainBody").css("background", "linear-gradient(rgba(255, 255, 255, 0.85),rgba(255, 255, 255, 0.85)),url('" + meatyGif  + "')")
+  $("[bgcolor='#ffdede']").css("background", "#ffffff")
   $("[bgcolor='#339900']").css("background", "url('" + baconPattern + "')")
   $("#GroupGrid > div:last-child").css("background", "url('" + baconPattern + "')")
   let slider = $("#GroupKey > table > tbody > tr > [bgcolor]")
