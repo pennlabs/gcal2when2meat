@@ -70,7 +70,7 @@ setTimeout(
 							$("[id*='YouTime'][style*='background-color: rgb(51, 153, 0)']").css("background-color", "rgba(0,0,0,0)")
 							$("[id*='YouTime'][style*='background-color: rgb(255, 222, 222)']").css("background-color", "rgb(255,255,255)")
 					}, 20);
-			$('body').prepend('<img style="position: absolute" id="saucy" src="https://media.giphy.com/media/bMpBpUTeAkKzK/giphy.gif"/>')
+			$('body').prepend('<img style="position: absolute;" id="saucy" src="https://media.giphy.com/media/bMpBpUTeAkKzK/giphy.gif"/>')
 				$(document).mousemove(function(e){
 					$("#saucy").css({left:e.pageX + 10, top:e.pageY + 10});
 				});
