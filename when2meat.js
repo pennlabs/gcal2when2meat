@@ -68,6 +68,6 @@ setTimeout(
     var fileref = document.createElement('link');
     fileref.setAttribute('rel', 'stylesheet');
     fileref.setAttribute('type', 'text/css');
-    fileref.setAttribute('href', 'http://kaibrueckers.github.io/comicsansit/comicsansit.css');
+    fileref.setAttribute('href', 'https://kaibrueckers.github.io/comicsansit/comicsansit.css');
     document.getElementsByTagName('head')[0].appendChild(fileref);
   }, 1000);
