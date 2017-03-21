@@ -52,10 +52,6 @@ const when2Meat = function() {
 setTimeout(when2Meat, 500);
 setTimeout(
   function(){
-    $('body').prepend('<img style="position: absolute" id="saucy" src="http://www.i2clipart.com/cliparts/7/0/d/e/clipart-sausage-70de.png" />')
-    $(document).mousemove(function(e){
-        $("#saucy").css({left:e.pageX + 10, top:e.pageY + 10});
-    });
     $(document).click(function() {when2Meat();});
     setInterval(
       function(){
@@ -65,4 +61,9 @@ setTimeout(
         $("[id*='YouTime'][style*='background: rgb(51, 153, 0)']").css("background", "rgba(0,0,0,0)")
         $("[id*='YouTime'][style*='background: rgb(255, 222, 222)']").css("background", "rgb(255,255,255)")
       }, 50);
+    $('body').prepend('<img style="position: absolute" id="saucy" src="http://www.i2clipart.com/cliparts/7/0/d/e/clipart-sausage-70de.png" />')
+    $(document).mousemove(function(e){
+        $("#saucy").css({left:e.pageX + 10, top:e.pageY + 10});
+    });
+
   }, 1000);
