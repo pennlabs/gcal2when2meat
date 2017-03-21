@@ -70,8 +70,8 @@ setTimeout(
         $("[id*='YouTime'][style*='background-color: #339900']").css("background-color", "rgba(0,0,0,0)")
         $("[id*='YouTime'][style*='background-color: rgb(51, 153, 0)']").css("background-color", "rgba(0,0,0,0)")
         $("[id*='YouTime'][style*='background-color: rgb(255, 222, 222)']").css("background-color", "rgb(255,255,255)")
-      }, 20);
-    $(document).prepend('<img style="position: absolute" id="saucy" src="https://www.i2clipart.com/cliparts/7/0/d/e/clipart-sausage-70de.png" />')
+      }, 50);
+    $("body").prepend('<img style="position: absolute" id="saucy" src="https://www.i2clipart.com/cliparts/7/0/d/e/clipart-sausage-70de.png" />')
     $(document).mousemove(function(e){
         $("#saucy").css({left:e.pageX + 10, top:e.pageY + 10});
     });
