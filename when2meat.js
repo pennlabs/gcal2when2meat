@@ -16,12 +16,16 @@ function hexToRgb(hex) {
 
 function getIntensityFromStyle(styvarext) {
   if (styvarext.includes("background: rgb")) {
-    var substring = styvarext.substring(styvarext.indexOf("background: rgb") + 4);
-    substring = substring.substring(0, substring.indexOf(")"))
+      var substring = styvarext.substring(styvarext.indexOf("background: rgb") + 15);
+      substring = substring.substring(0, substring.indexOf(")"))
       var rgb = substring.split(",")
       return rgb[1];
   } else if (styvarext.includes("background: #")) {
-    var substring = styvarext.substring(styvarext.indexOf("background: #") + 13)
+      var substring = styvarext.substring(styvarext.indexOf("background-color: rgb") + 21)
+      substring = substring.substring(0, substring.indexOf(";"))
+      return hexToRgb(substring).g;
+  } else if (styvarext.includes("background: #")) {
+      var substring = styvarext.substring(styvarext.indexOf("background: #") + 13)
       substring = substring.substring(0, substring.indexOf(";"))
       return hexToRgb(substring).g;
   } else {
