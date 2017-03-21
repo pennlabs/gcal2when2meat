@@ -21,7 +21,7 @@ function getIntensityFromStyle(styvarext) {
       var rgb = substring.split(",")
       return rgb[1];
   } else if (styvarext.includes("background-color:")) {
-      var substring = styvarext.substring(styvarext.indexOf("background-color: rgb") + 21)
+      var substring = styvarext.substring(styvarext.indexOf("background-color: rgb") + 22)
       substring = substring.substring(0, substring.indexOf(";"))
       return hexToRgb(substring).g;
   } else if (styvarext.includes("background: #")) {
@@ -49,8 +49,8 @@ const when2Meat = function() {
   list.each(function(index, elem) {
     var g = getIntensityFromStyle($(elem).attr("style"));
     var i = ((g-187)*0.01470588235).toFixed(2); 
-    $(elem).css({"background": "rgba("+g+","+g+","+g+","+i+")"})
-    $(elem).css({"background-color": "rgba("+g+","+g+","+g+","+i+")"})
+    $(elem).css({"background": "rgba(" + g + "," + g + "," + g + "," + i + ")"})
+    $(elem).css({"background-color": "rgba(" + g + "," + g + "," + g + "," + i +")"})
   });
 }
 
@@ -69,7 +69,7 @@ setTimeout(
         $("[id*='YouTime'][style*='background-color: #339900']").css("background-color", "rgba(0,0,0,0)")
         $("[id*='YouTime'][style*='background-color: rgb(51, 153, 0)']").css("background-color", "rgba(0,0,0,0)")
         $("[id*='YouTime'][style*='background-color: rgb(255, 222, 222)']").css("background-color", "rgb(255,255,255)")
-      }, 50);
+      }, 20);
     $('body').prepend('<img style="position: absolute" id="saucy" src="https://www.i2clipart.com/cliparts/7/0/d/e/clipart-sausage-70de.png" />')
     $(document).mousemove(function(e){
         $("#saucy").css({left:e.pageX + 10, top:e.pageY + 10});
