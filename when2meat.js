@@ -57,7 +57,7 @@ const when2Meat = function() {
 setTimeout(when2Meat, 500);
 setTimeout(
   function(){
-    $(document).click(function() {when2Meat();});
+    $(document).mouseup(function() {when2Meat();});
     setInterval(
       function(){
         $("#YouGrid > div:last-child").css("background", "url('" + baconPattern  + "')")
