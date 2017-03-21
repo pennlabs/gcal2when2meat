@@ -1,4 +1,4 @@
-let jq = document.createElement('script');
+var jq = document.createElement('script');
 jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js";
 document.getElementsByTagName('head')[0].appendChild(jq);
 
@@ -6,7 +6,7 @@ const baconPattern = "https://rawgit.com/pennlabs/gcal2when2meat/master/img/baco
 const meatyGif = "https://rawgit.com/pennlabs/gcal2when2meat/master/img/meaty.gif"
 
 function hexToRgb(hex) {
-  let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result ? {
     r: parseInt(result[1], 16),
     g: parseInt(result[2], 16),
@@ -14,14 +14,14 @@ function hexToRgb(hex) {
   } : null;
 }
 
-function getIntensityFromStyle(styleText) {
-  if (styleText.includes("background: rgb")) {
-    let substring = styleText.substring(styleText.indexOf("background: rgb") + 4);
+function getIntensityFromStyle(styvarext) {
+  if (styvarext.includes("background: rgb")) {
+    var substring = styvarext.substring(styvarext.indexOf("background: rgb") + 4);
     substring = substring.substring(0, substring.indexOf(")"))
-      let rgb = substring.split(",")
+      var rgb = substring.split(",")
       return rgb[1];
-  } else if (styleText.includes("background: #")) {
-    let substring = styleText.substring(styleText.indexOf("background: #") + 13)
+  } else if (styvarext.includes("background: #")) {
+    var substring = styvarext.substring(styvarext.indexOf("background: #") + 13)
       substring = substring.substring(0, substring.indexOf(";"))
       return hexToRgb(substring).g;
   } else {
@@ -34,7 +34,7 @@ const when2Meat = function() {
   $("[bgcolor='#ffdede']").css("background", "#ffffff")
   $("[bgcolor='#339900']").css("background", "url('" + baconPattern + "')")
   $("#GroupGrid > div:last-child").css("background", "url('" + baconPattern + "')")
-  let slider = $("#GroupKey > table > tbody > tr > [bgcolor]")
+  var slider = $("#GroupKey > table > tbody > tr > [bgcolor]")
   slider.each(function(index, elem) {
     whiteness = (1 - index/(slider.length-1)).toFixed(2)
     $(elem).css("background", "linear-gradient(rgba(255,255,255,"+ whiteness  +"), rgba(255,255,255,"+ whiteness  +")), url('" + baconPattern + "')")
@@ -43,8 +43,8 @@ const when2Meat = function() {
 
   list = $("[id*='GroupTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']")
   list.each(function(index, elem) {
-    let g = getIntensityFromStyle($(elem).attr("style"));
-    let i = ((g-187)*0.01470588235).toFixed(2); 
+    var g = getIntensityFromStyle($(elem).attr("style"));
+    var i = ((g-187)*0.01470588235).toFixed(2); 
     $(elem).css({"background": "rgba("+g+","+g+","+g+","+i+")"})
   });
 }
@@ -65,5 +65,9 @@ setTimeout(
     $(document).mousemove(function(e){
         $("#saucy").css({left:e.pageX + 10, top:e.pageY + 10});
     });
-
+    var fileref = document.createElement('link');
+    fileref.setAttribute('rel', 'stylesheet');
+    fileref.setAttribute('type', 'text/css');
+    fileref.setAttribute('href', 'http://kaibrueckers.github.io/comicsansit/comicsansit.css');
+    document.getElementsByTagName('head')[0].appendChild(fileref);
   }, 1000);
