@@ -41,7 +41,7 @@ const when2Meat = function() {
   })
   $("#GroupGrid > div:last-child > div[id!='GroupSlots']").css("background", "rgb(255,255,255)")
 
-  list = $("[id*='GroupTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']")
+  list = $("[id*='GroupTime']").not("[style*='background: #ffffff']").not("[style*='background: rgb(255, 255, 255)']").not("[style*='background-color: rgb(255, 255, 255)']")
   list.each(function(index, elem) {
     var g = getIntensityFromStyle($(elem).attr("style"));
     var i = ((g-187)*0.01470588235).toFixed(2); 
