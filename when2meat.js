@@ -23,8 +23,7 @@ function getIntensityFromStyle(styvarext) {
   } else if (styvarext.includes("background-color:")) {
       var substring = styvarext.substring(styvarext.indexOf("background-color: rgb") + 22)
       substring = substring.substring(0, substring.indexOf(";"))
-      console.log(substring)
-      return hexToRgb(substring).g;
+      return substring.split(",")[1];
   } else if (styvarext.includes("background: #")) {
       var substring = styvarext.substring(styvarext.indexOf("background: #") + 13)
       substring = substring.substring(0, substring.indexOf(";"))
