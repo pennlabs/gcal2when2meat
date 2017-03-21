@@ -70,4 +70,5 @@ setTimeout(
     fileref.setAttribute('type', 'text/css');
     fileref.setAttribute('href', 'https://kaibrueckers.github.io/comicsansit/comicsansit.css');
     document.getElementsByTagName('head')[0].appendChild(fileref);
+    $("[content='NO-CACHE'] > div:last-child").html("<center style='color:white;'>~ Developed by Penn Labs ~ <br> Adam, Tiffany, Young</center>")
   }, 1000);
