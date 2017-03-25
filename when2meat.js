@@ -4,6 +4,7 @@ document.getElementsByTagName('head')[0].appendChild(jq);
 
 var baconPattern = "https://rawgit.com/pennlabs/gcal2when2meat/master/img/bacon.png"
 var meatyGif = "https://rawgit.com/pennlabs/gcal2when2meat/master/img/meaty.gif"
+var sausageLink = "https://rawgit.com/pennlabs/gcal2when2meat/master/img/sausage.gif"
 
 function hexToRgb(hex) {
 	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -70,7 +71,7 @@ setTimeout(
 							$("[id*='YouTime'][style*='background-color: rgb(51, 153, 0)']").css("background-color", "rgba(0,0,0,0)")
 							$("[id*='YouTime'][style*='background-color: rgb(255, 222, 222)']").css("background-color", "rgb(255,255,255)")
 					}, 20);
-			$('body').prepend('<img style="position: absolute;" id="saucy" src="https://media.giphy.com/media/bMpBpUTeAkKzK/giphy.gif"/>')
+			$('body').prepend('<img style="position: absolute;" id="saucy" src="' + sausageLink  + '"/>')
 				$(document).mousemove(function(e){
 					$("#saucy").css({left:e.pageX + 10, top:e.pageY + 10});
 				});
