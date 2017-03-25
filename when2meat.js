@@ -2,9 +2,9 @@ var jq = document.createElement('script');
 jq.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js";
 document.getElementsByTagName('head')[0].appendChild(jq);
 
-var baconPattern = "https://rawgit.com/pennlabs/gcal2when2meat/master/img/bacon.png"
-var meatyGif = "https://rawgit.com/pennlabs/gcal2when2meat/master/img/meaty.gif"
-var sausageLink = "https://rawgit.com/pennlabs/gcal2when2meat/master/img/sausage.gif"
+var baconPattern = "https://github.com/pennlabs/gcal2when2meat/blob/master/img/bacon.png"
+var meatyGif = "https://github.com/pennlabs/gcal2when2meat/blob/master/img/meaty.gif"
+var sausageLink = "https://github.com/pennlabs/gcal2when2meat/blob/master/img/sausage.gif"
 
 function hexToRgb(hex) {
 	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
