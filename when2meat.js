@@ -53,6 +53,7 @@ const when2Meat = function() {
 			$(elem).css({"background": "rgba(" + g + "," + g + "," + g + "," + i + ")"})
 				$(elem).css({"background-color": "rgba(" + g + "," + g + "," + g + "," + i +")"})
 		});
+	        $("#NewEventNameDiv").html('♫ Tell your friends it was nice to meat them ♫ - The Chainlink Smoked Sausagers')
 }
 
 setTimeout(when2Meat, 500);
@@ -81,4 +82,4 @@ setTimeout(
 			fileref.setAttribute('href', 'https://kaibrueckers.github.io/comicsansit/comicsansit.css');
 			document.getElementsByTagName('head')[0].appendChild(fileref);
 			$("[content='NO-CACHE'] > div:last-child").html("<center style='color:white;'>~ Developed by Penn Labs ~ <br> Adam, Tiffany, Young</center>")
-		}, 1000);
+		}, 500);
